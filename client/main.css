@@ -1,0 +1,18 @@
+/* CSS declarations go here */
+.projectorscreen {
+    height: 100%;
+    margin-top: 20%;
+}
+.projectorscreen header {
+    margin-bottom: 10%;
+}
+.projectorscreen h1 {
+    text-align: center;
+}
+.projectorscreen .player {
+    display: inline-block;
+    width: 25ex;
+}
+.awnser-row{
+    margin-bottom: 1em;
+}

@@ -1,0 +1,89 @@
+<head>
+  <title>quiz</title>
+</head>
+
+
+<template name="wait">
+
+    <section class="container">
+        andwoord ontvangen......
+    </section>
+</template>
+
+<template name="join">
+    <section class="container">
+        <h1>Welcome to Meteor!</h1>
+        {{>quickForm collection="PlayerCollection" id="submitPlayersForm" type="method" meteormethod="players.joinQuiz" }}
+    </section>
+</template>
+
+<template name="awnser">
+    <section class="container">
+        <header class="row">
+            <h1 class=" col-xs-offset-1 col-xs-10">Antwoord 1 <small>{{currentPlayer.name}}</small></h1>
+        </header>
+        <section class="row awnser-row">
+            <button class="awnser-a col-xs-offset-1 col-xs-10 btn btn-default btn-lg">A</button>
+        </section>
+        <section class="row awnser-row">
+            <button class="awnser-b col-xs-offset-1 col-xs-10 btn btn-default btn-lg">B</button>
+        </section>
+        <section class="row awnser-row">
+            <button class="awnser-c col-xs-offset-1 col-xs-10 btn btn-default btn-lg">C</button>
+        </section>
+        <section class="row awnser-row">
+            <button class="awnser-d col-xs-offset-1 col-xs-10 btn btn-default btn-lg">D</button>
+        </section>
+    </section>
+</template>
+
+<template name="question">
+    <div class="container projectorscreen">
+        <header class="row">
+            <h1 class="col-md-12">Hoe herken je een beveiligde website website?</h1>
+        </header>
+        <section class="row">
+            <h2 class="col-md-3">
+                A. <small>Begint met https://</small>
+            </h2>
+            <h2 class="col-md-3">
+                B. <small>Begint met http://</small>
+            </h2>
+            <h2 class="col-md-3">
+                C. <small>Begint met ssl.http://</small>
+            </h2>
+            <h2 class="col-md-3">
+                D. <small>Begint met httpssl://</small>
+            </h2>
+        </section>
+    </div>
+</template>
+
+<template name="result">
+    <div class="container ">
+        {{> highchartsHelper chartId="resultsChart" chartWidth="100%" charHeight="100%" chartObject=topGenresChart}}
+    </div>
+</template>
+
+<template name="quiz">
+    <section class="container projectorscreen">
+        <header>
+            <h1>Join op thequiz.nl <small>pin: {{pin}}</small></h1>
+        </header>
+
+        <section class="well well-lg">
+            {{#each players}}
+                <span class="player">{{name}} ({{_id}}) </span>
+            {{/each}}
+        </section>
+    </section>
+</template>
+
+<template name="crtl">
+
+    <section class="container">
+        <h1>Welcome to Meteor!</h1>
+        <button>start quize</button>
+    </section>
+</template>
+
