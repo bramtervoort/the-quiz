@@ -4,15 +4,18 @@
 
 
 <template name="wait">
-
     <section class="container">
-        andwoord ontvangen......
+        <h1>... andwoord ontvangen ...</h1>
     </section>
 </template>
 
 <template name="join">
     <section class="container">
-        <h1>Welcome to Meteor!</h1>
+        <h1>Welcome to the quiz!</h1>
+
+        {{#if error_msg }}
+        <div class="alert alert-danger">{{error_msg}}</div>
+        {{/if}}
         {{>quickForm collection="PlayerCollection" id="submitPlayersForm" type="method" meteormethod="players.joinQuiz" }}
     </section>
 </template>
@@ -43,7 +46,7 @@
             <h1 class="col-md-12">Hoe herken je een beveiligde website website?</h1>
         </header>
         <section class="row">
-            <h2 class="col-md-3">
+            <h2 class="col-md-3" >
                 A. <small>Begint met https://</small>
             </h2>
             <h2 class="col-md-3">
@@ -73,7 +76,7 @@
 
         <section class="well well-lg">
             {{#each players}}
-                <span class="player">{{name}} ({{_id}}) </span>
+                <span class="player">{{name}} </span>
             {{/each}}
         </section>
     </section>
@@ -83,7 +86,15 @@
 
     <section class="container">
         <h1>Welcome to Meteor!</h1>
-        <button>start quize</button>
+        <p>id: {{quiz._id}}, status: {{quiz.status}}</p>
+
+        <p><button id="startquiz">Start quiz</button></p>
+
+        <ul>
+            {{#each players}}
+                <li>{{name}} ({{clientAddress}})</li>
+            {{/each}}
+        </ul>
     </section>
 </template>
 
