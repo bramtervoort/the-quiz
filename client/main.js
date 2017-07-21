@@ -72,7 +72,7 @@ Template.awnser.events({
         Meteor.call('awnser.create', {
             pin: player.pin,
             player: player._id,
-            awnser: 'b'
+            awnser: 'c'
         });
         Router.go('/wait');
     },
@@ -84,7 +84,7 @@ Template.awnser.events({
         Meteor.call('awnser.create', {
             pin: player.pin,
             player: player._id,
-            awnser: 'b'
+            awnser: 'd'
         });
         Router.go('/wait');
     }

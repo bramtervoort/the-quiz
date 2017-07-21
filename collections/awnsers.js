@@ -10,6 +10,9 @@ AwnserSchema = new SimpleSchema({
     },
     player: {
         type: String,
+    },
+    clientAddress: {
+        type: String,
     }
 });
 AwnserCollection.attachSchema(AwnserSchema);
