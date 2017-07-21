@@ -16,3 +16,12 @@
 .awnser-row{
     margin-bottom: 1em;
 }
+
+.bgthing{
+    background-image: url('/intro-bg.jpg');
+    background-size: 100%;
+}
+
+.bgthing h1 small{
+    text-shadow: 4px 4px 2px rgba(150, 150, 150, 1);
+}
