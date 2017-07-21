@@ -18,11 +18,10 @@ AutoForm.addHooks(['submitPlayersForm'], {
 Template.crtl.events({
     'click button#startquiz'(event, instance) {
         Meteor.call('games.start', instance.data.quiz._id, 'start');
-        handle = setInterval(function () {
+        setTimeout(function () {
             console.log('time');
-            clearInterval(handle);
             Meteor.call('games.start', instance.data.quiz._id, 'result');
-        }, 15000);
+        }, 10000);
     },
     'click button.ip-hide'(event, instance) {
         var cheats = instance.data.quiz.cheats;
