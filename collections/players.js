@@ -2,7 +2,10 @@ PlayerCollection = new Mongo.Collection('players');
 PlayerSchema = new SimpleSchema({
     pin: {
         type: String,
-        label: 'Pin'
+        label: 'Pin',
+        autoform: {
+            type: 'number'
+        }
     },
     name: {
         type: String,
