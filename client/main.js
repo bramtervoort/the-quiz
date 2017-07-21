@@ -18,6 +18,18 @@ AutoForm.addHooks(['submitPlayersForm'], {
 Template.crtl.events({
     'click button#startquiz'(event, instance) {
         Meteor.call('games.start', instance.data.quiz._id, 'start');
+    },
+    'click button.ip-hide'(event, instance) {
+        var cheats = instance.data.quiz.cheats;
+        if (!cheats) {
+            cheats = [];
+        }
+        cheats.push($(event.target).data('ip'));
+        console.log($(event.target).data('ip'), instance.data.quiz, cheats);
+        Meteor.call('games.cheat', instance.data.quiz._id, cheats);
+    },
+    'click button#clear-cheats'(event, instance) {
+        Meteor.call('games.cheat', instance.data.quiz._id, []);
     }
 });
 
@@ -77,4 +89,3 @@ Template.awnser.events({
         Router.go('/wait');
     }
 });
-

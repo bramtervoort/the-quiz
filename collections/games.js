@@ -7,6 +7,10 @@ GamesSchema = new SimpleSchema({
     status: {
         type: String,
         label: 'status'
+    },
+    cheats: {
+        type: [String],
+        optional: true
     }
 });
 GamesCollection.attachSchema(GamesSchema);

@@ -86,9 +86,17 @@
 
     <section class="container">
         <h1>Welcome to Meteor!</h1>
-        <p>id: {{quiz._id}}, status: {{quiz.status}}</p>
+        <p>id: {{quiz._id}}, status: {{quiz.status}}, cheats: {{quiz.cheats}}</p>
 
-        <p><button id="startquiz">Start quiz</button></p>
+        <p><button id="startquiz" class="btn btn-success">Start quiz</button> <button id="clear-cheats" class="btn btn-info">clear cheats</button></p>
+
+        <div class="btn-group-vertical" role="group" aria-label="...">
+            {{#each clientAddress}}
+            <button class="btn btn-default btn-group ip-hide" data-ip="{{ip}}">
+                {{ip}} ({{cnt}})
+            </button>
+            {{/each}}
+        </div>
 
         <ul>
             {{#each players}}
